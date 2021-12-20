@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>회원가입 페이지</h1>
+	<form action="/member/insert" method="post">
+		<table>
+			<tr>
+				<th>id</th>
+				<td> <input type="text" name="mId"> </td>
+			</tr>
+			
+			<tr>
+				<th>password</th>
+				<td> <input type="password" name="mPassword"> </td>
+			</tr>
+			
+			<tr>
+				<th>name</th>
+				<td> <input type="text" name="mName"> </td>
+			</tr>
+			<tr>
+				<th>등록하기</th>
+				<td> <input type="submit" name="insert" id="insert" value="등록하기"> <a href="/">돌아가기</a>
+				<button type="button" name="back" onclick="location.href='/'"> 돌아가기 </button>
+				</td>
+			</tr>
+			
+		</table>
+	</form>
+</body>
+</html>

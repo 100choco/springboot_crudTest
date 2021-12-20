@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>회원목록.</h1>
+	<table border="1">
+		<tr>
+			<th>NO</th>
+			<th>ID</th>
+			<th>NAME</th>
+			<th>회원정보 보기</th>
+			<th>삭제</th>
+		
+		</tr>
+		
+		<tr th:each="memberList : ${memberList}">
+			<td th:text="${memberList.mNo}"></td>
+			<td th:text="${memberList.mId}"></td>
+			<td th:text="${memberList.mName}"></td>
+			<td><button type="button" id="memberInfoBtn" th:onclick="'location.href=\''+ @{/member/memberinfo?mNo=}+${memberList.mNo} + '\''">회원정보보기</button>  </td>
+			<td><button type="button" id="memberDeleteBtn" th:onclick="'location.href=\''+ @{/member/delete?mNo=}+${memberList.mNo} + '\''">삭제</button> </td>
+			
+			<!-- 	<td> <button type="button" id="memberDeleteBtn" th:href="@{/member/delete?mNo=}+${memberAllList.mNo}">삭제</button> </td> -->
+																	
+		
+		</tr>
+	
+
+	
+	</table>
+	<button type="button" name="back" onclick="location.href='/'"> 돌아가기 </button>
+</body>
+</html>
